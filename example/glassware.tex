@@ -1,0 +1,98 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[a4paper,left=2.25cm,right=2.25cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+\title{Glassware Diagrams}
+\author{David Roberts}
+\date{}
+
+\input{../glasswarelib.tex}
+
+\begin{document}
+ \maketitle
+ 
+ \begin{figure}[h!]
+  \begin{center}
+   \begin{tikzpicture}
+    \bunsen{0,0}
+    \tripod{0,0}
+    \crucible{0,\tripodheight}
+    \cruciblelid{0,\tripodheight}
+    \metalcoil{0,\tripodheight}
+   \end{tikzpicture}
+   \caption{Bunsen burner, tripod, crucible with lid, metal coil}
+  \end{center}
+ \end{figure}
+ 
+ \begin{figure}[h!]
+  \begin{center}
+   \begin{tikzpicture}
+    \dropper[rotate={-45}]{0,0}
+   \end{tikzpicture}
+   \caption{Dropper}
+  \end{center}
+ \end{figure}
+ 
+ \begin{figure}[h!]
+  \begin{center}
+   \begin{tikzpicture}
+    \beaker{0,0}{0}
+   \end{tikzpicture}
+   \caption{Empty beaker}
+  \end{center}
+ \end{figure}
+ 
+ \begin{figure}[h!]
+  \begin{center}
+   \begin{tikzpicture}
+    \beaker{0,0}{1.00}
+    \testtube[fill=gray!25]{0,0.5}{1.00}
+   \end{tikzpicture}
+   \caption{Test-tube in filled beaker}
+  \end{center}
+ \end{figure}
+ 
+ \begin{figure}[h!]
+  \begin{center}
+   \begin{tikzpicture}
+    \begin{scope}[shift={(0,0)}]
+     \beaker[fill=gray!25]{0,0}{1.00}
+     \pile[fill=gray!25]{0,0}
+    \end{scope}
+   \end{tikzpicture}
+   \caption{Powder pile in filled beaker}
+  \end{center}
+ \end{figure}
+ 
+ \begin{figure}[h!]
+  \begin{center}
+   \begin{tikzpicture}
+    \begin{scope}[shift={(0,0)}]
+     \beaker{0,0}{1.00}
+     \beaker[fill=gray!25]{0,0}{0.50}
+    \end{scope}
+   \end{tikzpicture}
+   \caption{Beaker filled with mixture}
+  \end{center}
+ \end{figure}
+ 
+ \begin{figure}[h!]
+  \begin{center}
+   \begin{tikzpicture}
+    \testtube{0,0}{0.25}
+    \metalcoil[scale=0.8]{0,0.1}
+   \end{tikzpicture}
+   \caption{25\% filled test-tube with metal coil}
+  \end{center}
+ \end{figure}
+ 
+ \begin{figure}[h!]
+  \begin{center}
+   \begin{tikzpicture}
+    \testtube{0,0}{0.50}
+    \stopper{0,\testtubeheight}
+   \end{tikzpicture}
+   \caption{50\% filled test-tube with stopper}
+  \end{center}
+ \end{figure}
+\end{document}
