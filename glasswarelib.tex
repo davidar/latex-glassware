@@ -71,6 +71,23 @@
  \end{scope}
 }
 
+\newcommand{\flask}[3][]{
+ \begin{scope}[shift={(#2)},glassware,#1]
+  \ifnonzero{#3}{
+   \begin{scope}
+    \clip[rounded corners]
+         (-0.45,3) -- (-0.25,3) -- (-0.25,2) -- (-1.0,0) -- (1.0,0) -- (0.25,2) -- (0.25,3) -- (0.45,3);
+    \filldraw
+         [yscale=2.8] (-1.0,#3)
+         [rounded corners] -- (-1.0,0) -- (1.0,0)
+         [sharp corners] -- (1.0,#3) -- cycle;
+   \end{scope}
+  }
+  \draw[rounded corners]
+        (-0.45,3) -- (-0.25,3) -- (-0.25,2) -- (-1.0,0) -- (1.0,0) -- (0.25,2) -- (0.25,3) -- (0.45,3);
+ \end{scope}
+}
+
 \newcommand{\testtube}[3][]{
  \begin{scope}[shift={(#2)},glassware,#1]
   \ifnonzero{#3}{
@@ -92,5 +109,22 @@
 \newcommand{\pile}[2][]{
  \begin{scope}[shift={(#2)},glassware,#1]
   \filldraw (-0.3,0.1) -- (0.3,0.1) -- (0.1, 0.3) arc (45:135:0.141421) -- cycle; % 0.141421 = 0.2/sqrt(2)
+ \end{scope}
+}
+
+\newcommand{\burette}[3][]{
+ \begin{scope}[shift={(#2)},glassware,#1]
+  \ifnonzero{#3}{
+   \begin{scope}
+    \clip[rounded corners]
+         (-0.5,9) -- (-0.3,9) -- (-0.3,3) -- (-0.15,2.8) -- (-0.15,1) -- (0,0) -- (0.15,1) -- (0.15,2.8) -- (0.3,3) -- (0.3,9) -- (0.5,9);
+    \filldraw[shift={(0,2.7)},yscale=6.1] (-0.5,#3) rectangle (0.5,0);
+    \fill (-0.5,0) rectangle (0.5,2.7);
+   \end{scope}
+  }
+  \draw[rounded corners]
+        (-0.5,9) -- (-0.3,9) -- (-0.3,3) -- (-0.15,2.8) -- (-0.15,1) -- (0,0) -- (0.15,1) -- (0.15,2.8) -- (0.3,3) -- (0.3,9) -- (0.5,9);
+  \filldraw[fill=white,rounded corners] (-0.3,2.7) rectangle (0.6,2.4);
+  \filldraw[fill=white,rounded corners] (0.4,3.0) rectangle (0.6,2.1);
  \end{scope}
 }
